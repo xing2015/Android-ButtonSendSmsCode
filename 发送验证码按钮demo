@@ -36,8 +36,19 @@
 ```
 
 //2.再写java代码：
-
-  ```     //找到控件 
+  此处为关键代码块，并非全部代码，直接运行时不行滴.
+  ``` 
+  //用到的控件和变量
+    private TextView mTvPhone;
+    private EditText mEtVerificationCode;
+    private TextView mTvResetTimer;
+    private Button mBtConfirm;
+    private String mBindingMobile;
+    private String mSmsCode;
+    private Timer mTimer;
+    private int COUNT_DOWN_TIMER = 60;
+    
+  //找到控件 
           mTvRestTimer = (TextView) findViewById(R.id.tv_reset_timer);
          //绑定点击事件（此处用rx实现）
                RxView.clicks(mTvResetTimer)
@@ -55,7 +66,7 @@
 ```
 //3.点击你的发送按钮
 
-//4.点击完事后，按钮该倒计时吧，在回调函数中调用倒计时。
+//4.点击后，按钮该倒计时，在回调函数中调用倒计时。
 
 ```
 //你肯定有个回调函数收取服务器反馈吧（这里我的是OnSuccess....）
